@@ -115,6 +115,12 @@ function App() {
           </select>
         </div>
       </div>
+      <br></br>
+      {selectedCountry && selectedState && selectedCity && (
+        <p>
+          You have selected {selectedCity}, {selectedState}, {selectedCountry}
+        </p>
+      )}
     </div>
   );
 }
