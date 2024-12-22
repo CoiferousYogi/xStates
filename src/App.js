@@ -18,11 +18,16 @@ function App() {
           "https://crio-location-selector.onrender.com/countries"
         );
 
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+
         const data = await response.json();
 
         setCountries(data);
       } catch (error) {
         console.error("Error fetching countries:", error);
+        setCountries([]);
       }
     };
 
